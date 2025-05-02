@@ -1,40 +1,98 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Vijay Resume</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <section id="home">
-      <nav>
-        <a href="#" class="logo">
-          <img src="data:image/jpeg;base64,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" alt="the logo">
-        </a>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sudarshni Ramesh - Software Engineer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-900 font-sans leading-relaxed">
+  <main class="max-w-3xl mx-auto p-6">
+    <header class="text-center mb-8">
+      <h1 class="text-3xl font-bold">Sudarshni Ramesh</h1>
+      <p class="text-sm mt-2">
+        📍 Urbana, Illinois, USA – 61801<br />
+        📞 217-904-0457 | 📧 <a href="mailto:sudarshniramesh31@gmail.com" class="text-blue-600 underline">sudarshniramesh31@gmail.com</a><br />
+        <a href="https://www.linkedin.com/in/sudarshni-ramesh-4b248320b/" class="text-blue-600 underline">LinkedIn</a> |
+        <a href="https://github.com/Sudarshni-Ramesh" class="text-blue-600 underline">GitHub</a>
+      </p>
+    </header>
 
-          <span class="menu-space"></span>
-
-        <ul class="menu">
-          <li> <a href="#">Home</a> </li>
-          <li> <a href="#">Skills</a> </li>
-          <li> <a href="#">Recent</a> </li>
-          <li> <a href="#">Clients</a> </li>
-          <li> <a href="#">Contacts</a> </li>
-        </ul>
-        <a href="#" class="hey"><strong>Say Hi!</strong></a>
-      </nav>
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold border-b border-gray-300 pb-1 mb-2">Education</h2>
+      <div>
+        <p class="font-medium">University of Illinois Urbana-Champaign</p>
+        <p class="text-sm text-gray-600">MCS, Aug 2023 – Dec 2024 | GPA: 3.86/4.00</p>
+        <p class="text-sm">Coursework: Data Mining, UI Design, Computer Security, Database Systems</p>
+      </div>
+      <div class="mt-4">
+        <p class="font-medium">St. Joseph’s College of Engineering</p>
+        <p class="text-sm text-gray-600">BE in Computer Science, Aug 2019 – May 2023 | GPA: 3.70/4.00</p>
+        <p class="text-sm">Coursework: Operating Systems, Data Structures, Software Engineering</p>
+      </div>
     </section>
 
-    <div class="content">
-      <div class="image">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAhvez6OcWFgT9SxTxc09hKbHCYZD66Z81nQ&usqp=CAU" alt="">
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold border-b border-gray-300 pb-1 mb-2">Technical Skills</h2>
+      <ul class="list-disc list-inside text-sm space-y-1">
+        <li><strong>Languages:</strong> Python, Java, C/C++, JavaScript, TypeScript, SQL</li>
+        <li><strong>Frameworks:</strong> React, Angular, Node.js, Express.js, Flask, Django</li>
+        <li><strong>DevOps:</strong> Docker, Kubernetes, Git, CI/CD, Postman, Agile/Scrum</li>
+        <li><strong>Cloud:</strong> AWS, GCP, Firebase, IBM Cloud</li>
+        <li><strong>Databases:</strong> PostgreSQL, MySQL, MongoDB, Neo4j, DuckDB, SQLite</li>
+        <li><strong>Tools:</strong> JUnit, Eclipse, Power BI, Unix/Linux</li>
+      </ul>
+    </section>
+
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold border-b border-gray-300 pb-1 mb-2">Professional Experience</h2>
+      <div class="mb-4">
+        <p class="font-medium">Research Assistant, UIUC (Feb 2025 – present)</p>
+        <ul class="list-disc list-inside text-sm">
+          <li>Built employee attrition classifier in Python using IBM HR data, improving accuracy by 25%</li>
+          <li>Created Power BI dashboards, reducing HR decision-making time by 20%</li>
+        </ul>
       </div>
-      <div class="main-text">
-        <h1>Hello, I am the<br> Vijay</h1>
-        <p>Joseph Vijay Chandrasekhar (born 22 June 1974) is an Indian actor, dancer, playback singer and philanthropist who predominantly works
-           in Tamil cinema and also appeared in other Indian languages films. </p>
-           <a href="#" class="resume-btn">See My Resume</a>
+      <div class="mb-4">
+        <p class="font-medium">Teaching Assistant, UIUC (Aug 2024 – Dec 2024)</p>
+        <ul class="list-disc list-inside text-sm">
+          <li>Developed metadata schemas using Python and SQL, improving query efficiency by 30%</li>
+          <li>Enhanced ETL processes using DuckDB and Pandas, reducing processing time by 35%</li>
+        </ul>
       </div>
-    </div>
-  </body>
+      <div class="mb-4">
+        <p class="font-medium">Web Developer Intern, Sparks Foundation (Sep – Oct 2021)</p>
+        <ul class="list-disc list-inside text-sm">
+          <li>Integrated secure payment gateway, increasing success rate by 25%</li>
+        </ul>
+      </div>
+      <div>
+        <p class="font-medium">Web Developer Intern, Suven Consultants (Jul – Aug 2021)</p>
+        <ul class="list-disc list-inside text-sm">
+          <li>Built responsive blog site; improved SEO by 40%, reduced load time by 1.5s</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="mb-6">
+      <h2 class="text-xl font-semibold border-b border-gray-300 pb-1 mb-2">Projects</h2>
+      <ul class="list-disc list-inside text-sm space-y-2">
+        <li><strong>Lockedin:</strong> Study planner app using Android Studio + OR-Tools, integrated with Google Calendar</li>
+        <li><strong>NoteScribe:</strong> React + Node.js app using OpenAI Whisper for automated note-taking</li>
+        <li><strong>HireIt:</strong> Job portal system built with React, Node.js, and MySQL</li>
+        <li><strong>Text Classification:</strong> Used GNNs and transformer models for enhanced weakly labeled classification</li>
+        <li><strong>Job Recommender:</strong> IBM cloud-based app using collaborative filtering with 90% accuracy</li>
+        <li><strong>Employee Management:</strong> Java desktop app with SQLite for HR record handling</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="text-xl font-semibold border-b border-gray-300 pb-1 mb-2">Certifications & Publications</h2>
+      <ul class="list-disc list-inside text-sm space-y-1">
+        <li>IEEE paper on CO₂ emission prediction using Random Forest – <a href="https://ieeexplore.ieee.org/document/10200707" class="text-blue-600 underline">Read Paper</a></li>
+        <li>Completed Coursera Specialization in Data Engineering, Big Data, and ML on GCP</li>
+      </ul>
+    </section>
+  </main>
+</body>
 </html>
