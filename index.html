@@ -6,6 +6,35 @@
   <title>Sudarshni Ramesh - Software Engineer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+    .modal-content {
+      position: relative;
+      background-color: white;
+      margin: 15% auto;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body class="bg-gradient-to-br from-indigo-50 to-blue-50 text-gray-800 font-['Inter'] leading-relaxed min-h-screen">
   <main class="max-w-4xl mx-auto p-8 bg-white shadow-lg rounded-xl my-8">
@@ -114,32 +143,141 @@
     <section class="mb-8 bg-white p-6 rounded-lg shadow-sm border-l-4 border-yellow-500">
       <h2 class="text-2xl font-semibold text-yellow-700 mb-4">Projects</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300">
+        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300 cursor-pointer" onclick="showProjectDetails('lockedin')">
           <p class="font-medium text-yellow-800">Lockedin</p>
           <p class="text-sm mt-1">Study planner app using Android Studio + OR-Tools, integrated with Google Calendar</p>
         </div>
-        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300">
+        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300 cursor-pointer" onclick="showProjectDetails('notescribe')">
           <p class="font-medium text-yellow-800">NoteScribe</p>
           <p class="text-sm mt-1">React + Node.js app using OpenAI Whisper for automated note-taking</p>
         </div>
-        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300">
+        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300 cursor-pointer" onclick="showProjectDetails('hireit')">
           <p class="font-medium text-yellow-800">HireIt</p>
           <p class="text-sm mt-1">Job portal system built with React, Node.js, and MySQL</p>
         </div>
-        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300">
+        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300 cursor-pointer" onclick="showProjectDetails('text-classification')">
           <p class="font-medium text-yellow-800">Text Classification</p>
           <p class="text-sm mt-1">Used GNNs and transformer models for enhanced weakly labeled classification</p>
         </div>
-        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300">
+        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300 cursor-pointer" onclick="showProjectDetails('job-recommender')">
           <p class="font-medium text-yellow-800">Job Recommender</p>
           <p class="text-sm mt-1">IBM cloud-based app using collaborative filtering with 90% accuracy</p>
         </div>
-        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300">
+        <div class="bg-yellow-50 p-4 rounded-lg hover:shadow-md transition duration-300 cursor-pointer" onclick="showProjectDetails('employee-management')">
           <p class="font-medium text-yellow-800">Employee Management</p>
           <p class="text-sm mt-1">Java desktop app with SQLite for HR record handling</p>
         </div>
       </div>
     </section>
+
+    <!-- Project Details Modal -->
+    <div id="projectModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="projectDetails" class="p-4">
+          <!-- Project details will be inserted here -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const projectDetails = {
+        'lockedin': {
+          title: 'Lockedin',
+          description: 'A comprehensive study planner application built using Android Studio and OR-Tools.',
+          details: [
+            'Integrated with Google Calendar for seamless schedule management',
+            'Implemented OR-Tools for optimal time slot allocation',
+            'Features include task prioritization, progress tracking, and study session optimization',
+            'Built with Java and Android SDK',
+            'Utilized Material Design principles for modern UI/UX'
+          ]
+        },
+        'notescribe': {
+          title: 'NoteScribe',
+          description: 'An intelligent note-taking application leveraging AI for automated transcription.',
+          details: [
+            'Utilized OpenAI Whisper for accurate speech-to-text conversion',
+            'Built with React for frontend and Node.js for backend',
+            'Features real-time transcription and note organization',
+            'Implements secure user authentication and cloud storage',
+            'Supports multiple languages and accents'
+          ]
+        },
+        'hireit': {
+          title: 'HireIt',
+          description: 'A full-stack job portal system connecting employers and job seekers.',
+          details: [
+            'Developed using React, Node.js, and MySQL',
+            'Features include job posting, application tracking, and candidate matching',
+            'Implemented secure authentication and role-based access control',
+            'Includes advanced search and filtering capabilities',
+            'Real-time notifications for application updates'
+          ]
+        },
+        'text-classification': {
+          title: 'Text Classification',
+          description: 'Advanced text classification system using Graph Neural Networks and transformer models.',
+          details: [
+            'Implemented GNNs for improved weakly labeled data classification',
+            'Utilized transformer models for enhanced text understanding',
+            'Achieved significant improvement in classification accuracy',
+            'Handled large-scale text datasets efficiently',
+            'Implemented custom preprocessing pipeline'
+          ]
+        },
+        'job-recommender': {
+          title: 'Job Recommender',
+          description: 'Cloud-based job recommendation system with high accuracy.',
+          details: [
+            'Built on IBM Cloud infrastructure',
+            'Implemented collaborative filtering algorithms',
+            'Achieved 90% accuracy in job recommendations',
+            'Features personalized job matching based on user profile',
+            'Includes skill gap analysis and learning recommendations'
+          ]
+        },
+        'employee-management': {
+          title: 'Employee Management',
+          description: 'Desktop application for comprehensive HR record management.',
+          details: [
+            'Developed using Java and SQLite',
+            'Features employee record management, attendance tracking, and payroll processing',
+            'Implements secure data storage and backup',
+            'Includes reporting and analytics capabilities',
+            'User-friendly interface with role-based access'
+          ]
+        }
+      };
+
+      function showProjectDetails(projectId) {
+        const modal = document.getElementById('projectModal');
+        const detailsDiv = document.getElementById('projectDetails');
+        const project = projectDetails[projectId];
+
+        detailsDiv.innerHTML = `
+          <h3 class="text-2xl font-bold text-yellow-700 mb-4">${project.title}</h3>
+          <p class="text-gray-700 mb-4">${project.description}</p>
+          <ul class="list-disc list-inside space-y-2 text-gray-600">
+            ${project.details.map(detail => `<li>${detail}</li>`).join('')}
+          </ul>
+        `;
+
+        modal.style.display = 'block';
+      }
+
+      function closeModal() {
+        document.getElementById('projectModal').style.display = 'none';
+      }
+
+      // Close modal when clicking outside
+      window.onclick = function(event) {
+        const modal = document.getElementById('projectModal');
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      }
+    </script>
 
     <section class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-red-500">
       <h2 class="text-2xl font-semibold text-red-700 mb-4">Certifications & Publications</h2>
